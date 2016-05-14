@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PhishFarm</title>
+    <!-- Normalize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/spacelab/bootstrap.min.css">
+    <link rel='stylesheet' type='text/css' href='style.css'>
+  </head>
+  <body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <a class="navbar-brand" href="index.html">PhishFarm</a>
+          </div>
+          <div class="col-md-6 text-right">
+            <button type="button" class="btn btn-default navbar-btn">Sign in</button>
+            <button type="button" class="btn btn-default navbar-btn">Sign up</button>
+          </div>
+
+        </div>
+      </div>
+    </nav>
+
+    <!-- Sign up Form -->
+    <div class='container vertical-center'>
+      <div class='jumbotron col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3'>
+        <form class="form-horizontal text-primary">
+          <fieldset>
+            <legend class='text-center'>WELCOME BACK</legend>
+            <div class="form-group">
+              <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+              <div class="col-lg-10">
+                <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+              <div class="col-lg-10">
+                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox"> Checkbox
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class='col-lg-2'></div>
+              <div class="col-lg-10">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+
+    <!-- jQuery  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  </body>
+</html>
