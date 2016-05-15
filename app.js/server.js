@@ -20,6 +20,11 @@ app.use(expressSession({
 app.use( passport.initialize() );
 app.use( passport.session() );
 
+app.use(express.static('/Users/bradford/Workspace/Playground/galvanize/gschoolProjects/q1-project/public/images'));
+app.use(express.static('/Users/bradford/Workspace/Playground/galvanize/gschoolProjects/q1-project/public/scripts'));
+app.use(express.static('/Users/bradford/Workspace/Playground/galvanize/gschoolProjects/q1-project/public/stylesheets'));
+app.use(express.static('/Users/bradford/Workspace/Playground/galvanize/gschoolProjects/q1-project/public/html'));
+
 passport.use(new passportLocal.Strategy(verifyCredentials));
 // passport.use(new passportHttp.BasicStrategy(verifyCredentials));
 
@@ -50,14 +55,14 @@ function ensureAuthenticated(request, response, next) {
 };
 
 app.get('/', function(request, response) {
-    response.sendFile("/Users/bradford/Workspace/Playground/galvanize/gschoolProjects/q1-project/index.html", {
+    response.sendFile("/Users/bradford/Workspace/Playground/galvanize/gschoolProjects/q1-project/public/html/index.html", {
       isAuthenticated: request.isAuthenticated(),
       user: request.user
     });
 });
 
 app.post('/', passport.authenticate('local'), function(request, response) {
-  response.sendFile('/Users/bradford/Workspace/Playground/galvanize/gschoolProjects/q1-project/profile.html')
+  response.sendFile('/Users/bradford/Workspace/Playground/galvanize/gschoolProjects/q1-project/public/html/profile.html')
 });
 
 app.get('/logout', function(request, response) {
