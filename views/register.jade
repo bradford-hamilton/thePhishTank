@@ -1,0 +1,70 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title PhishFarm Register
+    // Normalize
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css')
+    // Bootstrap
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/spacelab/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='style.css')
+  body
+    // Navigation Bar
+    nav.navbar.navbar-default
+      .container-fluid
+        .row
+          .col-md-6
+            a.navbar-brand(href='index.html') PhishFarm
+          .col-md-6.text-right
+            button.btn.btn-default.navbar-btn(type='button') Sign in
+    // Register
+    .container.vertical-center
+      .jumbotron.col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-lg-6.col-lg-offset-3
+        .row
+          .panel-heading
+            .panel-title.text-center
+              h3.title Register for PhishFarm
+              h5 Create a PhishFarm account to get free access to everything Phish
+          .main-login.main-center.col-xs-10.col-xs-offset-1
+            form.form-horizontal(method='post', action='#')
+              // Email
+              .form-group
+                label.cols-sm-2.control-label(for='email') Your Email
+                .cols-sm-10
+                  .input-group
+                    span.input-group-addon
+                      i.fa.fa-envelope.fa(aria-hidden='true')
+                    input#email.form-control(type='text', name='email', placeholder='Enter your Email')
+              // Username
+              .form-group
+                label.cols-sm-2.control-label(for='username') Username
+                .cols-sm-10
+                  .input-group
+                    span.input-group-addon
+                      i.fa.fa-users.fa(aria-hidden='true')
+                    input#username.form-control(type='text', name='username', placeholder='Enter your Username')
+              // Password
+              .form-group
+                label.cols-sm-2.control-label(for='password') Password
+                .cols-sm-10
+                  .input-group
+                    span.input-group-addon
+                      i.fa.fa-lock.fa-lg(aria-hidden='true')
+                    input#password.form-control(type='password', name='password', placeholder='Enter your Password')
+              // Confirm Password
+              .form-group
+                label.cols-sm-2.control-label(for='confirm') Confirm Password
+                .cols-sm-10
+                  .input-group
+                    span.input-group-addon
+                      i.fa.fa-lock.fa-lg(aria-hidden='true')
+                    input#confirm.form-control(type='password', name='confirm', placeholder='Confirm your Password')
+              // Register Button
+              .form-group
+                button.btn.btn-primary.btn-lg.btn-block.login-button(type='button') Register
+              // Login Button
+              .login-register
+                a(href='index.html') Login
+    // jQuery
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
