@@ -29,12 +29,13 @@ $(document).ready(function() {
       $('.news ul').append('<li></li>');
       $('li').eq(i).append('<hr/><br><br>');
       $('li').eq(i).append( "<h2 class='text-center'>" + titles[i] + "</h2 class>" );
+      $('li').eq(i).append('<br>');
+      $('li').eq(i).append( "<h5 class='text-center'>" + moment(dates[i]).format("dddd, MMMM Do YYYY, h:mm:ss a") + "</h5>" );
       $('li').eq(i).append('<br><br>');
       $('li').eq(i).append( bodys[i] );
     }
-
+    console.log(dates[0][0]);
   });
-
 
 
 });
