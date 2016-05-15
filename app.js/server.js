@@ -66,6 +66,13 @@ app.get('/', function(request, response) {
     });
 });
 
+app.get('/news', ensureAuthenticated, function(request, response) {
+  response.render("news", {
+    isAuthenticated: request.isAuthenticated(),
+    user: request.user
+  });
+});
+
 app.get('/profile', ensureAuthenticated, function(request, response) {
     response.render('profile', {
       isAuthenticated: request.isAuthenticated(),
