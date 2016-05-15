@@ -1,14 +1,19 @@
 var express = require('express');
+var path = require('path');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var expressSession = require('express-session');
 var jade = require('jade');
 
+
 var passport = require('passport');
 var passportLocal = require('passport-local');
-// var passportHttp = require('passport-http');
 
 var app = express();
+
+// view engine setup
+app.set('views', path.join(__dirname, '../views'));
+app.set('view engine', 'jade');
 
 app.use(bodyParser.urlencoded({ extended: false }) );
 app.use(cookieParser());
@@ -20,6 +25,10 @@ app.use(expressSession({
 
 app.use( passport.initialize() );
 app.use( passport.session() );
+
+app.use(express.static('/Users/bradford/Workspace/Playground/galvanize/gschoolProjects/q1-project/public/images'));
+app.use(express.static('/Users/bradford/Workspace/Playground/galvanize/gschoolProjects/q1-project/public/scripts'));
+app.use(express.static('/Users/bradford/Workspace/Playground/galvanize/gschoolProjects/q1-project/public/stylesheets'));
 
 passport.use(new passportLocal.Strategy(verifyCredentials));
 // passport.use(new passportHttp.BasicStrategy(verifyCredentials));
@@ -51,14 +60,21 @@ function ensureAuthenticated(request, response, next) {
 };
 
 app.get('/', function(request, response) {
-    response.sendFile("/Users/bradford/Workspace/Playground/galvanize/gschoolProjects/q1-project/index.html", {
+    response.render('index', {
       isAuthenticated: request.isAuthenticated(),
       user: request.user
     });
 });
 
+app.get('/profile', ensureAuthenticated, function(request, response) {
+    response.render('profile', {
+      isAuthenticated: request.isAuthenticated(),
+      user: request.user
+    });
+})
+
 app.post('/', passport.authenticate('local'), function(request, response) {
-  response.sendFile('/Users/bradford/Workspace/Playground/galvanize/gschoolProjects/q1-project/profile.html')
+  response.render('profile')
 });
 
 app.get('/logout', function(request, response) {
@@ -66,15 +82,6 @@ app.get('/logout', function(request, response) {
   response.redirect('/');
 });
 
-// //for any folder in api (change to anything i want authenticated) we want to auth
-// app.use('/api', passport.authenticate('basic', { session: false } ));
-//
-// app.get('/api/data', ensureAuthenticated, function(request, response) {
-//   response.json([
-//     { value: 'foo' },
-//     { value: 'bar' },
-//     { value: 'baz' }
-//   ]);
-// });
+
 
 app.listen(process.env.PORT || 1337);
