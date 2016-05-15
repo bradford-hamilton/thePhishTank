@@ -1,0 +1,30 @@
+{
+  "name": "phishfarm",
+  "version": "1.0.0",
+  "description": "App for everything Phish",
+  "main": "/index.html",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "cookie-parser": "^1.4.1",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "passport": "^0.3.2",
+    "passport-http": "^0.3.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bradford-hamilton/PhishFarm.git"
+  },
+  "author": "Bradford Lamson-Scribner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bradford-hamilton/PhishFarm/issues"
+  },
+  "homepage": "https://github.com/bradford-hamilton/PhishFarm#readme"
+}
