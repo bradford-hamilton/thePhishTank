@@ -2,8 +2,8 @@
   "name": "phish-farm",
   "version": "1.0.0",
   "description": "Web app for everything Phish",
-  "main": "app.js",
   "scripts": {
+    "start": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,6 +22,7 @@
     "express-session": "^1.13.0",
     "jade": "^1.11.0",
     "mongoose": "^4.4.17",
+    "nodemon": "^1.9.2",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0"
   }
