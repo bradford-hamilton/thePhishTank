@@ -6,8 +6,7 @@ var express = require('express'),
     session = require('express-session'),
     passport = require('passport'),
     LocalStrategy = require('passport-local').Strategy;
-
-
+    router = require('./routes/server-routes');
 
 mongoose.connect((process.env.MONGODB_URI || 'mongodb://localhost' )+ '/test' );
 
@@ -78,59 +77,8 @@ passport.use('loginStrategy', new LocalStrategy(
   }
 ));
 
-// Define register route
-app.route('/register')
-  .get(function(request, response) {
-    response.render('register');
-  })
-  .post(function(request, response, next) {
-    passport.authenticate('registerUser', function(err, user, info){
-      if (err) {
-        return response.send({ err: err, info: info });
-      }
-      response.send(user);
-    })(request, response, next);
-  });
+// router
+app.use('/', router);
 
-// Define login route
-app.route('/')
-  .get(function(request, response) {
-    response.render('index');
-  })
-  .post(function(request, response, next) {
-    passport.authenticate('loginStrategy', function(err, user, info){
-      if (err) {
-        return response.send({ err: err});
-      }
-      if (!user) {
-        return response.send(info);
-      }
-      request.login(user, function(err) {
-        if(err) {
-          return response.send(err);
-        }
-        return response.redirect('/profile');
-      })
-    })(request, response, next);
-  });
-
-
-// Define news route
-app.route('/news').get(function(request, response) {
-  if (!request.user) {
-    response.redirect('/');
-    return;
-  }
-  response.render('news');
-});
-
-// Define profile route
-app.route('/profile').get(function(request, response) {
-  if (!request.user) {
-    response.redirect('/');
-    return;
-  }
-  response.render('profile');
-});
-
+// Port to listen on
 app.listen(process.env.PORT || 1337);
