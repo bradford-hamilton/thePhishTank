@@ -13,3 +13,7 @@ body {
 .jumbotron {
   padding: 3rem;
 }
+
+nav button+button {
+  margin-left: .4em;
+}
