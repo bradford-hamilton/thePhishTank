@@ -42,7 +42,7 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
-// Register logic
+// Register strategy
 passport.use('registerUser', new LocalStrategy(
   { passReqToCallback: true },
   function(req, username, password, done) {
@@ -56,6 +56,24 @@ passport.use('registerUser', new LocalStrategy(
         return done(err);
       }
       return done(null, newUser);
+    });
+  }
+));
+
+// Login strategy
+passport.use('loginStrategy', new LocalStrategy(
+  function(username, password, done) {
+    User.findOne({ username: username }, function(err, user) {
+      if (err) {
+        return done(err);
+      }
+      if (!user) {
+        return done(null, false, { message: 'Incorrect username.' });
+      }
+      if (password !== user.password) {
+        return done(null, false, { message: 'Incorrect password.' });
+      }
+      return done(null, user);
     });
   }
 ));
@@ -75,23 +93,43 @@ app.route('/register')
   });
 
 // Define login route
-app.route('/').get(function(request, response) {
-  response.render('index');
-});
+app.route('/')
+  .get(function(request, response) {
+    response.render('index');
+  })
+  .post(function(request, response, next) {
+    passport.authenticate('loginStrategy', function(err, user, info){
+      if (err) {
+        return response.send({ err: err});
+      }
+      if (!user) {
+        return response.send(info);
+      }
+      request.login(user, function(err) {
+        if(err) {
+          return response.send(err);
+        }
+        return response.redirect('/profile');
+      })
+    })(request, response, next);
+  });
 
+
+// Define news route
 app.route('/news').get(function(request, response) {
   if (!request.user) {
     response.redirect('/');
     return;
   }
-  response.render('index');
+  response.render('news');
 });
 
+// Define profile route
 app.route('/profile').get(function(request, response) {
-  // if (!request.user) {
-  //   response.redirect('/');
-  //   return;
-  // }
+  if (!request.user) {
+    response.redirect('/');
+    return;
+  }
   response.render('profile');
 });
 
