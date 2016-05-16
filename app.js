@@ -95,4 +95,4 @@ app.route('/profile').get(function(request, response) {
   response.render('profile');
 });
 
-app.listen(1337);
+app.listen(process.env.PORT || 1337);
