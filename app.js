@@ -26,7 +26,7 @@ mongoose.connect('mongodb://localhost/test', function(err) {
   app.set('views', './');
 
   // Set middleware
-  app.use( bodyParser.urlencoded() );
+  app.use( bodyParser.urlencoded({ extended: false }) );
   app.use(session({
     secret: 'super-secret',
     resave: true,
@@ -52,11 +52,11 @@ mongoose.connect('mongodb://localhost/test', function(err) {
   // Register logic
   passport.use('registerUser', new LocalStrategy(
     { passReqToCallback: true },
-    function(request, username, password, done) {
+    function(req, username, password, done) {
       var newUser = new User({
         username: username,
         password: password,
-        email: request.body.email
+        email: req.body.email
       });
       newUser.save(function(err) {
         if (err) {
@@ -67,9 +67,19 @@ mongoose.connect('mongodb://localhost/test', function(err) {
     }
   ));
 
+  // Define route
   app.route('/register')
     .get(function(request, response) {
-      response.render('index');
+      response.render('register');
     })
+    .post(function(request, response, next) {
+      passport.authenticate('registerUser', function(err, user, info){
+        if (err) {
+          return response.send({ err: err, info: info });
+        }
+        response.send(user);
+      })(request, response, next);
+    });
 
+  app.listen(1337);
 });
