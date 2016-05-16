@@ -9,7 +9,7 @@ var express = require('express'),
 
 
 
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect((process.env.MONGODB_URI || 'mongodb://localhost' )+ '/test' );
 
 // Static assets
 app.use(express.static('./public'));
