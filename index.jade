@@ -1,0 +1,46 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title PhishFarm
+    // Normalize
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css')
+    // Bootstrap
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/spacelab/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='style-index.css')
+  body
+    // Navigation Bar
+    nav.navbar.navbar-default
+      .container-fluid
+        .row
+          .col-md-6
+            a.navbar-brand(href='index.html') PhishFarm
+          .col-md-6.text-right
+            button.btn.btn-default.navbar-btn(type='button') Sign in
+            button.btn.btn-default.navbar-btn(type='button') Sign up
+    // Log in Landing Page
+    .container.vertical-center
+      .jumbotron.col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-lg-6.col-lg-offset-3
+        form.form-horizontal.text-primary(action='', method='POST')
+          fieldset
+            legend.text-center WELCOME BACK
+            .form-group
+              label.col-lg-2.control-label(for='username') Username
+              .col-lg-10
+                input#username.form-control(type='text', name='username', placeholder='username')
+            .form-group
+              label.col-lg-2.control-label(for='inputPassword') Password
+              .col-lg-10
+                input#inputPassword.form-control(type='password', name='password', placeholder='Password')
+                .checkbox
+                  label
+                    input(type='checkbox')
+                    |  Remember Me
+            .form-group
+              .col-lg-6.col-lg-offset-3
+                input.btn.btn-primary.btn-block(type='submit', value='Log in')
+            .text-center
+              a(href='/register') New to PhishFarm? Sign up!
+    // jQuery
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
