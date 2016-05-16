@@ -31,7 +31,6 @@ app.use(express.static('/Users/bradford/Workspace/Playground/galvanize/gschoolPr
 app.use(express.static('/Users/bradford/Workspace/Playground/galvanize/gschoolProjects/q1-project/public/stylesheets'));
 
 passport.use(new passportLocal.Strategy(verifyCredentials));
-// passport.use(new passportHttp.BasicStrategy(verifyCredentials));
 
 function verifyCredentials (username, password, done) {
   if ( username === password ) {
@@ -88,7 +87,5 @@ app.get('/logout', function(request, response) {
   request.logout();
   response.redirect('/');
 });
-
-
 
 app.listen(process.env.PORT || 1337);
