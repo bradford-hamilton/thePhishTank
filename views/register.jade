@@ -15,59 +15,87 @@ html(lang='en')
       .container-fluid
         .row
           .col-md-6
-            a.navbar-brand(href='index.html') PhishFarm
+            a.navbar-brand(href='/') PhishFarm
           .col-md-6.text-right
             button.btn.btn-default.navbar-btn(type='button') Sign in
+            
+            
     // Register
     .container.vertical-center
       .jumbotron.col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-lg-6.col-lg-offset-3
-        .row
-          .panel-heading
-            .panel-title.text-center
-              h3.title Register for PhishFarm
-              h5 Create a PhishFarm account to get free access to everything Phish
-          .main-login.main-center.col-xs-10.col-xs-offset-1
-            form.form-horizontal(method='POST', action='/register')
-              // Email
-              .form-group
-                label.cols-sm-2.control-label(for='email') Your Email
-                .cols-sm-10
-                  .input-group
-                    span.input-group-addon
-                      i.fa.fa-envelope.fa(aria-hidden='true')
-                    input#email.form-control(type='email', name='email', placeholder='Enter your Email')
-              // Username
-              .form-group
-                label.cols-sm-2.control-label(for='username') Username
-                .cols-sm-10
-                  .input-group
-                    span.input-group-addon
-                      i.fa.fa-users.fa(aria-hidden='true')
-                    input#username.form-control(type='text', name='username', placeholder='Enter your Username')
-              // Password
-              .form-group
-                label.cols-sm-2.control-label(for='password') Password
-                .cols-sm-10
-                  .input-group
-                    span.input-group-addon
-                      i.fa.fa-lock.fa-lg(aria-hidden='true')
-                    input#password.form-control(type='password', name='password', placeholder='Enter your Password')
-              // Confirm Password
-              //
-                <div class="form-group">
-                <label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
-                <div class="cols-sm-10">
-                <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                <input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
-                </div>
-                </div>
-                </div>
-              // Register Button
-              .form-group
+        form.form-horizontal.text-primary(action='/register', method='POST')
+          fieldset
+            legend.text-center Register for PhishFarm
+            p.text-center Create a PhishFarm account for everything Phish
+            .form-group
+              label.col-lg-2.control-label(for='email') Email
+              .col-lg-10
+                input#email.form-control(type='email', name='email', placeholder='Email')
+            .form-group
+              label.col-lg-2.control-label(for='username') Username
+              .col-lg-10
+                input#username.form-control(type='text', name='username', placeholder='Username')
+            .form-group
+              label.col-lg-2.control-label(for='inputPassword') Password
+              .col-lg-10
+                input#inputPassword.form-control(type='password', name='password', placeholder='Password')
+            // Register Button
+            .form-group
+              .col-lg-4.col-lg-offset-4
                 input.btn.btn-primary(type='submit', value='Sign Up')
-              // Login Button
-              .login-register
-                a(href='index.html') Login
+            // Login Button
+            .login-register
+            .text-center
+              a(href='/') Login
+    //- .container.vertical-center
+    //-   .jumbotron.col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-lg-6.col-lg-offset-3
+    //-     .row
+    //-       .panel-heading
+    //-         .panel-title.text-center
+    //-           h3.title Register for PhishFarm
+    //-           h5 Create a PhishFarm account to get free access to everything Phish
+    //-       .main-login.main-center.col-xs-10.col-xs-offset-1
+    //-         form.form-horizontal(method='POST', action='/register')
+    //-           // Email
+    //-           .form-group
+    //-             label.cols-sm-2.control-label(for='email') Your Email
+    //-             .cols-sm-10
+    //-               .input-group
+    //-                 span.input-group-addon
+    //-                   i.fa.fa-envelope.fa(aria-hidden='true')
+    //-                 input#email.form-control(type='email', name='email', placeholder='Enter your Email')
+    //-           // Username
+    //-           .form-group
+    //-             label.cols-sm-2.control-label(for='username') Username
+    //-             .cols-sm-10
+    //-               .input-group
+    //-                 span.input-group-addon
+    //-                   i.fa.fa-users.fa(aria-hidden='true')
+    //-                 input#username.form-control(type='text', name='username', placeholder='Enter your Username')
+    //-           // Password
+    //-           .form-group
+    //-             label.cols-sm-2.control-label(for='password') Password
+    //-             .cols-sm-10
+    //-               .input-group
+    //-                 span.input-group-addon
+    //-                   i.fa.fa-lock.fa-lg(aria-hidden='true')
+    //-                 input#password.form-control(type='password', name='password', placeholder='Enter your Password')
+    //-           // Confirm Password
+    //-           //
+    //-             <div class="form-group">
+    //-             <label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
+    //-             <div class="cols-sm-10">
+    //-             <div class="input-group">
+    //-             <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+    //-             <input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
+    //-             </div>
+    //-             </div>
+    //-             </div>
+    //-           // Register Button
+    //-           .form-group
+    //-             input.btn.btn-primary(type='submit', value='Sign Up')
+    //-           // Login Button
+    //-           .login-register
+    //-             a(href='/') Login
     // jQuery
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
