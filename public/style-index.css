@@ -14,6 +14,6 @@ body {
   padding: 3rem;
 }
 
-nav button+button {
+nav a+a {
   margin-left: .4em;
 }
