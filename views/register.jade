@@ -17,7 +17,7 @@ html(lang='en')
           .col-md-6
             a.navbar-brand(href='/') PhishFarm
           .col-md-6.text-right
-            button.btn.btn-default.navbar-btn(type='button') Sign in
+            a.btn.btn-default.navbar-btn(type='button' href='/') Sign in
             
             
     // Register
@@ -36,7 +36,6 @@ html(lang='en')
                 .cols-sm-10
                   .input-group
                     span.input-group-addon
-                      i.fa.fa-envelope.fa(aria-hidden='true')
                     input#email.form-control(type='email', name='email', placeholder='Enter your Email')
               // Username
               .form-group
@@ -44,15 +43,13 @@ html(lang='en')
                 .cols-sm-10
                   .input-group
                     span.input-group-addon
-                      i.fa.fa-users.fa(aria-hidden='true')
                     input#username.form-control(type='text', name='username', placeholder='Enter your Username')
               // Password
               .form-group
                 label.cols-sm-2.control-label(for='password') Password
                 .cols-sm-10
                   .input-group
-                    span.input-group-addon
-                      i.fa.fa-lock.fa-lg(aria-hidden='true')
+                    span.input-group-addon 
                     input#password.form-control(type='password', name='password', placeholder='Enter your Password')
               // Confirm Password
               //
