@@ -16,41 +16,21 @@ html(lang='en')
       .container-fluid
         .row
           .col-md-4
-            a.navbar-brand(href='/profile') PhishFarm
+            a.navbar-brand(href='profile.html') PhishFarm
           .col-md-4
-            a.navbar-brand(href='/profile') Welcome back, Bradford
+            a.navbar-brand(href='profile.html') Welcome back, Bradford
           .col-md-4.text-right
-            // this used to be an <a> tag with href='/logout' : needs to function like that
-            a.btn.btn-default.navbar-btn(href='/logout') Log out
-    .container-fluid
-      .row
-        .col-lg-2.col-md-2.vertical-line
-          h3 Shows
-          br
-          br
-          h4
-            a
-              | Most Recent Show
-              a
-          br
-          br
-          h4
-            a
-              | Today in Phish History
-              a
-          br
-          br
-          h4
-            a
-              | Upcoming Shows
-              a
-          br
-          br
-          h4
-            a
-              | How have they been playing?
-              a
-    script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js')
+            button.btn.btn-default.navbar-btn(type='button') Log out
+    #left-nav.list-group.col-lg-2.col-md-3
+      .list-group.col-lg-2.col-md-3
+        h3 Profile
+      button#recent.list-group-item.active Most Recent Show
+      button#tiph.list-group-item Today in Phish History
+      button#upcoming.list-group-item Upcoming shows
+      button#reviews.list-group-item How've they been playing?
+    .contatiner
+      .row.col-lg-8
+        ul#display(style='list-style:none')
     // jQuery
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
-    script(src='script.js')
+    script(src='profile-ajax.js')

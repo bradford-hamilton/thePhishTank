@@ -24,14 +24,14 @@ router.route('/')
   .post(function(request, response, next) {
     passport.authenticate('loginStrategy', function(err, user, info){
       if (err) {
-        return response.send({ err: err});
+        return response.send({ err: err });
       }
       if (!user) {
-        return response.send(info);
+        return response.redirect('/');
       }
       request.login(user, function(err) {
         if(err) {
-          return response.send(err);
+          return response.redirect('/');
         }
         return response.redirect('/profile');
       })

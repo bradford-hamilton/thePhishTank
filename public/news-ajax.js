@@ -34,8 +34,6 @@ $(document).ready(function() {
       $('li').eq(i).append('<br><br>');
       $('li').eq(i).append( bodys[i] );
     }
-    console.log(dates[0][0]);
   });
-
 
 });
