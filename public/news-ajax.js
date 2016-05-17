@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
   /* Phish news ajax call */
   $.ajax({
     url: 'https://api.phish.net/api.js?api=2.0&method=pnet.news.get&format=json',
@@ -12,20 +11,20 @@ $(document).ready(function() {
     error: function(err) {
       alert(err);
     }
-  /* Use returned data */
+  // Use returned data
   }).done(function(data) {
     var dates = [],
         authors = [],
         titles = [],
         bodys = [];
-    /* Loop through data to store in arrays */
+    // Loop through data to store in arrays
     var len = data.length;
     for (var i = 0; i < len; i++) {
       dates.push( data[i].pubdate );
       authors.push( data[i].postedby );
       titles.push( data[i].title );
       bodys.push( data[i].txt );
-      /* Append to page */
+      // Append to page
       $('.news ul').append('<li></li>');
       $('li').eq(i).append('<hr/><br><br>');
       $('li').eq(i).append( "<h2 class='text-center'>" + titles[i] + "</h2 class>" );
@@ -35,5 +34,4 @@ $(document).ready(function() {
       $('li').eq(i).append( bodys[i] );
     }
   });
-
 });

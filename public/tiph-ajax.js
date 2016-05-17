@@ -14,7 +14,6 @@ $(document).ready(function() {
       }
     // Use returned data
     }).done(function(data) {
-      console.log(data);
       $('ul').empty();
       $('ul').append( '<li class="text-center"></li>' );
       $('li').append( '<hr/><br><br>' );
@@ -27,6 +26,4 @@ $(document).ready(function() {
       $('li').append( '<hr/><br><br>' );
     });
   });
-
-
 });
