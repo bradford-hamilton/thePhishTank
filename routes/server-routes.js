@@ -12,7 +12,7 @@ router.route('/register')
       if (err) {
         return response.send({ err: err, info: info });
       }
-      response.send(user);
+      return response.redirect('/profile');
     })(request, response, next);
   });
 
