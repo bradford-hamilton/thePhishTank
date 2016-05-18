@@ -21,13 +21,12 @@ $(document).ready(function() {
     }).done(function(data) {
       $('ul').empty();
       $('ul').append( '<li class="text-center"></li>' );
-      $('li').append( '<hr/><br><br>' );
+      $('li').append( '<br><br>' );
       $('li').append( "<h1 class='text-center'>" + data[0].venue + ' - ' + data[0].city + ', ' + data[0].state + "</h1>" );
       $('li').append( "<h2 class='text-center'>" + data[0].nicedate + "</h2>" );
       $('li').append( '<br>' );
       $('li').append( data[0].setlistdata );
-      $('li').append( '<br><br>' );
-      $('li').append( '<hr/><br><br>' );
+      $('li').append( '<br><hr/>' );
     });
   });
 });
