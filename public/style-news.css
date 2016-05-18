@@ -1,3 +1,7 @@
+body {
+  background-color: #f6f6f6;
+}
+
 ul {
   list-style-type: none;
 }
@@ -6,10 +10,22 @@ img {
   width: 100%;
 }
 
+#news {
+  font-size: 8rem;
+  font-family: 'Playfair Display', serif;
+}
+
 h2 {
   font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+}
+
+h5 {
+  font-family: 'Georgia', serif;
+  font-size: 2rem;
 }
 
 p {
   font-family: 'Georgia', serif;
+  font-size: 2srem;
 }

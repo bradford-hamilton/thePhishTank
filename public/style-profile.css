@@ -1,7 +1,22 @@
 body {
-  background-color: #a6ccff;
+  background-image: url('phish-pic.jpg');
+  background-size: auto;
 }
 
 #left-nav {
   margin-left: 1.32rem;
+}
+
+ul {
+  border-radius: 9px;
+}
+
+img {
+  border-radius: 9px;
+}
+
+#profile {
+  color: white;
+  text-shadow: 2px 2px #1b1b1b;
+  font-size: 5rem;
 }

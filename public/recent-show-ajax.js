@@ -1,7 +1,7 @@
 $(document).ready(function() {
-
+  // To change the nav buttons to active and color the jquery loaded display
   $('.list-group-item').click(function(event) {
-    $('ul').css('background-color', '#dee8fc');
+    $('ul').css('background-color', '#d1dbff');
     $(".list-group-item.active").removeClass("active");
     $(this).addClass('active');
   });
@@ -27,7 +27,7 @@ $(document).ready(function() {
       $('li').append( "<h2 class='text-center'>" + data[0].nicedate + "</h2>" );
       $('li').append( '<br>' );
       $('li').append( data[0].setlistdata );
-      $('li').append( '<br><hr/>' );
+      $('li').append( '<br>' );
     });
   });
 });

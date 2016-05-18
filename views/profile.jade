@@ -15,16 +15,15 @@ html(lang='en')
     nav.navbar.navbar-default
       .container-fluid
         .row
-          .col-md-4
-            a.navbar-brand(href='/profile') PhishFarm
-          .col-md-4
-            a.navbar-brand(href='/profile') Welcome back, Bradford
+          .col-md-8
+            a.navbar-brand(href='/profile') Profile
+            a.navbar-brand.text-primary(href='/news') News
           .col-md-4.text-right
             a.btn.btn-default.navbar-btn(href='/logout' role='button') Log out
     .container-fluid
       .row
         .col-lg-2.col-offset-6
-          h1.text-center Profile        
+          h1#profile.text-center Profile        
     #left-nav.list-group.col-lg-2.col-md-3
       button#recent.list-group-item.active Most Recent Show
       button#tiph.list-group-item Today in Phish History
@@ -34,8 +33,6 @@ html(lang='en')
       .row.col-lg-9.col-md-8
         ul.col-lg-12.col-md-12(style='list-style:none;')
           li.text-center
-            img(src='')
-        
     // jQuery
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
     script(src='recent-show-ajax.js')

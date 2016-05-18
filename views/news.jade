@@ -15,16 +15,16 @@ html(lang='en')
     nav.navbar.navbar-default
       .container-fluid
         .row
-          .col-md-6
-            a.navbar-brand(href='/profile') PhishFarm
-          .col-md-6
-            a.navbar-brand(href='/profile') Back to Profile
+          .col-md-8
+            a.navbar-brand(href='/profile') Profile
+            a.navbar-brand(href='/news') News
+          .col-md-4.text-right
+            a.btn.btn-default.navbar-btn(href='/logout' role='button') Log out
     // News
     .container
       .row
         .news.col-lg-12
-          h1.text-center News
-          br
+          h1#news.text-center News
           br
           ul
     // moment.js
