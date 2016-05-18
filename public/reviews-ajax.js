@@ -30,14 +30,14 @@ $('#reviews').click(function() {
       reviews.push( data[i].review );
       // Append to page
       $('ul').append( "<li class='text-center'></li>" );
-      $('li').eq(i).append( '<hr/>' );
+      $('li').eq(i).append( '<br>' );
       $('li').eq(i).append( "<h1 class='text-center'>" + venues[i] + ' - ' + cities[i] + ', ' + states[i] + "</h1>" );
       $('li').eq(i).append( "<h3 class='text-center'>" + dates[i] + "</h3>" );
       $('li').eq(i).append( '<br>' );
       $('li').eq(i).append( reviews[i] );
       $('li').eq(i).append( '<br><br><br><br>' );
       $('li').eq(i).append( "<h4 class='col-lg-offset-4 col-md-offset-4 col-sm-offset-4'>" + '-- ' + users[i] + "</h4>" );
-      $('li').eq(i).append( '<br><br>' );
+      $('li').eq(i).append( '<br><hr/><br>' );
     }
   });
 

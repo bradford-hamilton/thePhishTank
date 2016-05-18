@@ -16,21 +16,26 @@ html(lang='en')
       .container-fluid
         .row
           .col-md-4
-            a.navbar-brand(href='profile.html') PhishFarm
+            a.navbar-brand(href='/profile') PhishFarm
           .col-md-4
-            a.navbar-brand(href='profile.html') Welcome back, Bradford
+            a.navbar-brand(href='/profile') Welcome back, Bradford
           .col-md-4.text-right
-            button.btn.btn-default.navbar-btn(type='button') Log out
+            a.btn.btn-default.navbar-btn(href='/logout' role='button') Log out
+    .container-fluid
+      .row
+        .col-lg-2.col-offset-6
+          h1.text-center Profile        
     #left-nav.list-group.col-lg-2.col-md-3
-      .list-group.col-lg-2.col-md-3.col-sm-2
-        h3 Profile
       button#recent.list-group-item.active Most Recent Show
       button#tiph.list-group-item Today in Phish History
       button#upcoming-shows.list-group-item Upcoming shows
       button#reviews.list-group-item How've they been playing?
     .contatiner
       .row.col-lg-9.col-md-8
-        ul.col-lg-12.col-md-12(style='list-style:none; background-color:#f5f5f5')
+        ul.col-lg-12.col-md-12(style='list-style:none;')
+          li.text-center
+            img(src='')
+        
     // jQuery
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
     script(src='recent-show-ajax.js')

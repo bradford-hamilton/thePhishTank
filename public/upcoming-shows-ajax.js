@@ -25,12 +25,12 @@ $('#upcoming-shows').click(function() {
       cities.push( data[i].city );
       states.push( data[i].state );
       // Append to page
-      $('ul').append( '<li class="text-center"></li>' );
-      $('li').eq(i).append( '<hr/><br>' );
+      $('ul').append('<li></li>');
+      $('li').eq(i).append( '<br>' );
       $('li').eq(i).append( "<h1 class='text-center'>" + dates[i] + "</h1>" );
       $('li').eq(i).append( "<h2 class='text-center'>" + venues[i] + "</h2>" );
       $('li').eq(i).append( "<h3 class='text-center'>" + cities[i] + ', ' + states[i] + "</h3>" );
-      $('li').eq(i).append( '<br>' );
+      $('li').eq(i).append( '<hr/>' );
     }
   });
 });

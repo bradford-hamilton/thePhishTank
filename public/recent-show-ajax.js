@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
   $('.list-group-item').click(function(event) {
+    $('ul').css('background-color', '#dee8fc');
     $(".list-group-item.active").removeClass("active");
     $(this).addClass('active');
   });
