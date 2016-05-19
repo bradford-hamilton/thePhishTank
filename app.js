@@ -12,7 +12,7 @@ var express = require('express'),
     router = require('./routes/server-routes'),
     users = {};
 
-mongoose.connect((process.env.MONGODB_URI || 'mongodb://localhost' )+ '/test' );
+mongoose.connect((process.env.MONGODB_URI || 'mongodb://localhost'));
 
 // Static assets
 app.use(express.static('./public'));
