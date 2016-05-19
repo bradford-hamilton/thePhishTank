@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+  // Ajax call to tiph show/setlist
   $('#tiph').click(function() {
     $.ajax({
       url: 'https://api.phish.net/api.js?api=2.0&method=pnet.shows.setlists.tiph&format=json',
@@ -12,7 +12,7 @@ $(document).ready(function() {
       error: function(err) {
         alert(err);
       }
-    // Use returned data
+    // Use returned data to append to page
     }).done(function(data) {
       $('ul').empty();
       $('ul').append( '<li class="text-center"></li>' );

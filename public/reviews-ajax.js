@@ -1,5 +1,7 @@
 $('#reviews').click(function() {
+  // Empty screen first
   $('ul').empty();
+  // Ajax call to recent reviews
   $.ajax({
     url: 'https://api.phish.net/api.js?api=2.0&method=pnet.reviews.recent&format=json',
     type: 'GET',
@@ -40,7 +42,4 @@ $('#reviews').click(function() {
       $('li').eq(i).append( '<br><hr/><br>' );
     }
   });
-
-
-
 });

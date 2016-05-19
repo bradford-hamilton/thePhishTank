@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+  // Variables 
   var socket = io.connect();
   var $nicknameForm = $('#set-nickname');
   var $nicknameError = $('#nickname-error');
@@ -9,6 +10,7 @@ $(document).ready(function() {
   var $messageBox = $('#message');
   var $chat = $('#chat');
 
+  // When user submits username for chat
   $nicknameForm.submit(function(event) {
     event.preventDefault();
     socket.emit('new user', $nicknameBox.val(), function(data) {
@@ -17,12 +19,13 @@ $(document).ready(function() {
         $('#content-wrap').show();
         $('.jumbotron').show();
       } else {
-        $nicknameError.html("That username is already taken! Don't be stupid pick something else")
+        $nicknameError.html("That username is already taken! Don't be stupid pick something else");
       }
     });
     $nicknameBox.val('');
   });
 
+  // When user clicks enter or send on their message
   $messageForm.submit(function(event) {
     event.preventDefault();
     socket.emit('send message', $messageBox.val(), function(data) {
@@ -31,6 +34,7 @@ $(document).ready(function() {
     $messageBox.val('');
   });
 
+  // Adds current chat users to the users list
   socket.on('usernames', function(data) {
     var html = '';
     for (var i = 0; i < data.length; i++) {
@@ -42,7 +46,7 @@ $(document).ready(function() {
   // Add old messages in on client side
   socket.on('load old messages', function(docs) {
     console.log(docs);
-    //loop through old messages 'docs' from mongo, we want them in decending order to recent
+    // Loop through old messages 'docs' from mongo, we want them in decending order to recent
     for (var i = docs.length - 1; i >= 0; i--) {
       displayMessage( docs[i] );
     }
@@ -62,5 +66,4 @@ $(document).ready(function() {
   socket.on('new message', function(data) {
     displayMessage(data);
   });
-
 });

@@ -1,5 +1,7 @@
 $('#upcoming-shows').click(function() {
+  // Empty screen first
   $('ul').empty();
+  // Ajax call to upcoming shows 
   $.ajax({
     url: 'https://api.phish.net/api.js?api=2.0&method=pnet.shows.upcoming&format=json',
     type: 'GET',

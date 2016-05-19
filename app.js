@@ -89,7 +89,7 @@ io.sockets.on('connection', function(socket) {
   // Make variable above so you can put limit of last amount of messages on db
   // The -created takes the most recent however many number of messages i put in to load
   query.sort('-created').limit(9).exec(function(err, docs) {
-    if (err) { throw err };
+    if (err) { throw err; }
     socket.emit('load old messages', docs);
   });
 
@@ -116,19 +116,18 @@ io.sockets.on('connection', function(socket) {
     // Save message to mongo db
     var newMsg = new Chat({ msg: msg, nickname: socket.nickname });
     newMsg.save(function(err) {
-      if (err) { throw err };
+      if (err) { throw err; }
     });
     // Emit message to front end to display
     io.sockets.emit('new message', { msg: msg, nickname: socket.nickname });
   });
   // Function to disconnect and make user poof disapear
   socket.on('disconnect', function(data) {
-    if ( !socket.nickname ) { return };
+    if ( !socket.nickname ) { return; }
       delete users[socket.nickname];
       updateNicknames();
   });
 });
-
 
 // router
 app.use('/', router);

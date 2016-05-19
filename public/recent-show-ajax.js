@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  // To change the nav buttons to active and color the jquery loaded display
+  // Change the nav buttons to active and color the jquery loaded display
   $('.list-group-item').click(function(event) {
     $('ul').css('background-color', '#d1dbff');
     $(".list-group-item.active").removeClass("active");
@@ -18,7 +18,7 @@ $(document).ready(function() {
       error: function(err) {
         alert(err);
       }
-    // Use returned data
+    // Use returned data to append to page
     }).done(function(data) {
       $('ul').empty();
       $('ul').append( '<li class="text-center"></li>' );
