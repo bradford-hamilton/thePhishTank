@@ -62,7 +62,7 @@ router.get('/chat', function(request, response) {
     reponse.redirect('/');
     return
   }
-  response.render('chat'); 
+  response.render('chat');
 })
 
 // Define logout route
