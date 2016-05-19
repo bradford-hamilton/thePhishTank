@@ -38,6 +38,14 @@ router.route('/')
     })(request, response, next);
   });
 
+// Define profile route
+router.route('/profile').get(function(request, response) {
+  if (!request.user) {
+    response.redirect('/');
+    return;
+  }
+  response.render('profile');
+});
 
 // Define news route
 router.route('/news').get(function(request, response) {
@@ -48,14 +56,14 @@ router.route('/news').get(function(request, response) {
   response.render('news');
 });
 
-// Define profile route
-router.route('/profile').get(function(request, response) {
+// Define chat route
+router.get('/chat', function(request, response) {
   if (!request.user) {
-    response.redirect('/');
-    return;
+    reponse.redirect('/');
+    return
   }
-  response.render('profile');
-});
+  response.render('chat'); 
+})
 
 // Define logout route
 router.get('/logout', function(request, response) {

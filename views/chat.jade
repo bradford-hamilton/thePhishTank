@@ -1,0 +1,43 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title PhishFarm-Chat
+    // Normalize
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css')
+    // Bootstrap
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/spacelab/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='chat-style.css')
+  body
+    // Navigation Bar
+    nav.navbar.navbar-default
+      .container-fluid
+        .row
+          .col-md-8
+            a.navbar-brand(href='/profile') Profile
+            a.navbar-brand(href='/news') News
+          .col-md-4.text-right
+            a.btn.btn-default.navbar-btn(href='/logout' role='button') Log out
+    #nickname-wrap.container
+      row.col-lg-4.col-md-4.col-lg-offset-4.col-md-offset-4
+        h5#nickname-error
+        form#set-nickname
+          label.control-label(for='nickname') Please set your username for the chat
+          input#nickname.form-control
+          input.btn.btn-success.pull-right(type='submit')
+    #content-wrap.container
+      #chat-wrap.row.col-lg-8.col-md-8
+        #chat
+        // send messages form/input
+        form#send-message
+          label.control-label(for='message') Send Messages Below!
+          input#message.form-control
+          br
+          input.btn.btn-success.pull-right(type='submit')
+      .jumbotron.pull-right
+        h3 Users Online: 
+        h5#users
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js')
+    script(src='/socket.io/socket.io.js')
+    script(src='chat-script.js')
