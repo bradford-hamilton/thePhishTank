@@ -50,7 +50,12 @@ $(document).ready(function() {
 
   // Function to display messages, used in a couple places
   function displayMessage(data) {
-    $chat.append('<span class="msg"><b id="bold">' + data.nickname + ': </b>' + data.msg + '</span><br><br>');
+    if ( $('.msg').length > 8 ) {
+      $('.msg')[0].remove();
+      $chat.append('<span class="msg"><b id="bold">' + data.nickname + ': </b>' + data.msg + '<br><br></span>');
+    } else {
+      $chat.append('<span class="msg"><b id="bold">' + data.nickname + ': </b>' + data.msg + '<br><br></span>');
+    }
   }
 
   // New message

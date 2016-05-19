@@ -88,7 +88,7 @@ io.sockets.on('connection', function(socket) {
   var query = Chat.find({});
   // Make variable above so you can put limit of last amount of messages on db
   // The -created takes the most recent however many number of messages i put in to load
-  query.sort('-created').limit(13).exec(function(err, docs) {
+  query.sort('-created').limit(9).exec(function(err, docs) {
     if (err) { throw err };
     socket.emit('load old messages', docs);
   });
