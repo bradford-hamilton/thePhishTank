@@ -14,14 +14,12 @@ html(lang='en')
   body
     // Navigation Bar
     nav.navbar.navbar-default
-      .container-fluid
-        .row
-          .col-md-8
-            a.navbar-brand(href='/profile') Profile
-            a.navbar-brand(href='/news') News
-            a.navbar-brand(href='/chat') Chat
-          .col-md-4.text-right
-            a.btn.btn-default.navbar-btn(href='/logout' role='button') Log out
+      .col-xs-8
+        a.btn.btn-info.navbar-btn(href='/profile') Profile 
+        a.btn.btn-info.navbar-btn(href='/news') News
+        a.btn.btn-info.navbar-btn(href='/chat') Chat
+      .col-xs-4.text-right
+        a.btn.btn-default.navbar-btn(href='/logout') Log out
     // News
     .container
       .row
@@ -29,8 +27,8 @@ html(lang='en')
           h1#news.text-center News
           br
           ul
-    // moment.js
+    // Moment.js
     script(type='text/javascript', src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js')
-    // jQuery
+    // Javscript
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
     script(src='news-ajax.js')

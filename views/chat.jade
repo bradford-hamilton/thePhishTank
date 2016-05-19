@@ -13,13 +13,11 @@ html(lang='en')
   body
     // Navigation Bar
     nav.navbar.navbar-default
-      .container-fluid
-        .row
-          .col-md-8
-            a.navbar-brand(href='/profile') Profile
-            a.navbar-brand(href='/news') News
-          .col-md-4.text-right
-            a.btn.btn-default.navbar-btn(href='/logout' role='button') Log out
+      .col-md-8
+        a.btn.btn-info.navbar-btn(href='/profile') Profile
+        a.btn.btn-info.navbar-btn(href='/news') News
+      .col-md-4.text-right
+        a.btn.btn-default.navbar-btn(href='/logout') Log out
     #nickname-wrap.container
       .jumbotron.col-lg-6.col-md-6.col-lg-offset-3.col-md-offset-4
         h5#nickname-error
@@ -39,6 +37,7 @@ html(lang='en')
       .jumbotron.pull-right.chat-jumbo
         h3 Users Online: 
         h5#users
+    // Javascript    
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js')
     script(src='/socket.io/socket.io.js')
     script(src='chat-script.js')

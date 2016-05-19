@@ -59,3 +59,7 @@ body {
   color: #5d5d5d;
   font-size: 1.8rem;
 }
+
+nav a+a {
+  margin-left: .4em;
+}

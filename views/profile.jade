@@ -14,14 +14,12 @@ html(lang='en')
   body
     // Navigation Bar
     nav.navbar.navbar-default
-      .container-fluid
-        .row
-          .col-md-8
-            a.navbar-brand(href='/profile') Profile
-            a.navbar-brand.text-primary(href='/news') News
-            a.navbar-brand(href='/chat') Chat
-          .col-md-4.text-right
-            a.btn.btn-default.navbar-btn(href='/logout' role='button') Log out
+      .col-xs-8
+        a.btn.btn-info.navbar-btn(href='/profile') Profile
+        a.btn.btn-info.navbar-btn(href='/news') News
+        a.btn.btn-info.navbar-btn(href='/chat') Chat
+      .col-xs-4.text-right
+        a.btn.btn-default.navbar-btn(href='/logout') Log out
     .container-fluid
       .row
         .col-lg-2.col-offset-6
@@ -35,7 +33,7 @@ html(lang='en')
       .row.col-lg-9.col-md-8
         ul.col-lg-12.col-md-12(style='list-style:none;')
           li.text-center
-    // jQuery
+    // Javascript
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
     script(src='recent-show-ajax.js')
     script(src='tiph-ajax.js')

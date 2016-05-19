@@ -20,3 +20,7 @@ img {
   text-shadow: 2px 2px #1b1b1b;
   font-size: 5rem;
 }
+
+nav a+a {
+  margin-left: .4em;
+}

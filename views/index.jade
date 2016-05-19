@@ -13,13 +13,11 @@ html(lang='en')
   body
     // Navigation Bar
     nav.navbar.navbar-default
-      .container-fluid
-        .row
-          .col-md-6
-            a.navbar-brand(href='/') PhishFarm
-          .col-md-6.text-right
-            a.btn.btn-default.navbar-btn(href='/' role='button') Sign in
-            a.btn.btn-default.navbar-btn(href='/register' role='button') Sign up
+      .col-xs-6
+        a.btn.btn-info.navbar-btn(href='/') PhishFarm
+      .col-xs-6.text-right
+        a.btn.btn-default.navbar-btn(href='/') Sign in
+        a.btn.btn-default.navbar-btn(href='/register') Sign up
     // Log in Landing Page
     .container.vertical-center
       .jumbotron.col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-lg-6.col-lg-offset-3

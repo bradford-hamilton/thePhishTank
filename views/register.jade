@@ -13,14 +13,10 @@ html(lang='en')
   body
     // Navigation Bar
     nav.navbar.navbar-default
-      .container-fluid
-        .row
-          .col-md-6
-            a.navbar-brand(href='/') PhishFarm
-          .col-md-6.text-right
-            a.btn.btn-default.navbar-btn(href='/' role='button') Sign in
-            
-            
+      .col-xs-6
+        a.btn.btn-info.navbar-btn(href='/') PhishFarm
+      .col-xs-6.text-right
+        a.btn.btn-default.navbar-btn(href='/') Sign in
     // Register
     .container.vertical-center
       .jumbotron.col-xs-10.col-xs-offset-1.col-sm-8.col-sm-offset-2.col-lg-6.col-lg-offset-3
@@ -52,17 +48,6 @@ html(lang='en')
                   .input-group
                     span.input-group-addon 
                     input#password.form-control(type='password', name='password', placeholder='Enter your Password')
-              // Confirm Password
-              //
-                <div class="form-group">
-                <label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
-                <div class="cols-sm-10">
-                <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                <input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
-                </div>
-                </div>
-                </div>
               // Register Button
               .form-group
                 input.btn.btn-primary(type='submit', value='Sign Up')

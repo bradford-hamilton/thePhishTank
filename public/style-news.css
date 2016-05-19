@@ -29,3 +29,7 @@ p {
   font-family: 'Georgia', serif;
   font-size: 2srem;
 }
+
+nav a+a {
+  margin-left: .4em;
+}
