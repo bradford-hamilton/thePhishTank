@@ -16,7 +16,6 @@ $(document).ready(function() {
         $('#nickname-wrap').hide();
         $('#content-wrap').show();
         $('.jumbotron').show();
-        $('body').css({'background-color': '#98cdd9'});
       } else {
         $nicknameError.html("That username is already taken! Don't be stupid pick something else")
       }

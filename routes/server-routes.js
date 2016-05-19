@@ -59,7 +59,7 @@ router.route('/news').get(function(request, response) {
 // Define chat route
 router.get('/chat', function(request, response) {
   if (!request.user) {
-    reponse.redirect('/');
+    response.redirect('/');
     return
   }
   response.render('chat');

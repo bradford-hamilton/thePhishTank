@@ -1,5 +1,5 @@
 doctype html
-html
+html(lang='en')
   head
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1')
@@ -9,6 +9,7 @@ html
     // Bootstrap
     link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/spacelab/bootstrap.min.css')
     link(rel='stylesheet', type='text/css', href='chat-style.css')
+    link(rel='icon', type='image/png', href='donuts.png')
   body
     // Navigation Bar
     nav.navbar.navbar-default
@@ -20,10 +21,10 @@ html
           .col-md-4.text-right
             a.btn.btn-default.navbar-btn(href='/logout' role='button') Log out
     #nickname-wrap.container
-      row.col-lg-4.col-md-4.col-lg-offset-4.col-md-offset-4
+      .jumbotron.col-lg-6.col-md-6.col-lg-offset-3.col-md-offset-4
         h5#nickname-error
         form#set-nickname
-          label.control-label(for='nickname') Please set your username for the chat
+          label#pick-nickname-text.control-label(for='nickname') Please set your username for the chat
           input#nickname.form-control
           input.btn.btn-success.pull-right(type='submit')
     #content-wrap.container
@@ -35,7 +36,7 @@ html
           input#message.form-control
           br
           input.btn.btn-success.pull-right(type='submit')
-      .jumbotron.pull-right
+      .jumbotron.pull-right.chat-jumbo
         h3 Users Online: 
         h5#users
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js')
