@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  // Variables 
+  // Variables
   var socket = io.connect();
   var $nicknameForm = $('#set-nickname');
   var $nicknameError = $('#nickname-error');
