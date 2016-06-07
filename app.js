@@ -81,7 +81,6 @@ passport.use('loginStrategy', new LocalStrategy(
   }
 ));
 
-// Sockets
 // All socket code goes inside here below
 io.sockets.on('connection', function(socket) {
   // Query mongo and put in conditions for search {} is everything
