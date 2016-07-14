@@ -6,7 +6,9 @@ $(document).ready(function() {
     $(this).addClass('active');
   });
   // API call for most recent show
-  $('#recent').click(function() {
+  $('#recent').click(recentShowAjax);
+
+  function recentShowAjax() {
     $.ajax({
       url: 'https://api.phish.net/api.js?api=2.0&method=pnet.shows.setlists.latest&format=json',
       type: 'GET',
@@ -29,5 +31,6 @@ $(document).ready(function() {
       $('li').append( data[0].setlistdata );
       $('li').append( '<br>' );
     });
-  });
+  }
+
 });
